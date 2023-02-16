@@ -1,4 +1,9 @@
-﻿// //1 task
+﻿void Print(string message)
+{
+    Console.WriteLine(message);
+}
+
+// //1 task
 // Console.Write("Input 1 number: ");
 // int firstNumber = Convert.ToInt32(Console.ReadLine());
 // Console.Write("Input 2 number: ");
@@ -159,11 +164,11 @@
 //     Console.WriteLine(number % 10);}
 
 // //Задача 15: Напишите программу, которая принимает на вход цифру, обозначающую день недели, и проверяет, является ли этот день выходным.
-Console.Write(" Input day: ");
-int day = Convert.ToInt32(Console.ReadLine());
-var result = day == 6 || day == 7 ? ("Stay home") : ("Go Work!");
-if (day > 7) {Console.WriteLine("Error");}
-else {Console.WriteLine(result);}
+// Console.Write(" Input day: ");
+// int day = Convert.ToInt32(Console.ReadLine());
+// var result = day == 6 || day == 7 ? ("Stay home") : ("Go Work!");
+// if (day > 7) {Console.WriteLine("Error");}
+// else {Console.WriteLine(result);}
 
 
 
@@ -177,3 +182,82 @@ else {Console.WriteLine(result);}
 // Console.WriteLine(result);  // 12288
 // result = result >> 12;
 // Console.WriteLine(result);  // 3
+
+
+// //тесты
+// int test = 1993;
+// int i = 1;
+// foreach(char c in Convert.ToString(test))
+// {
+//     Console.WriteLine($"{c} - {i} элемент");
+//     i++;
+// }
+
+//// Таблица умножения
+// Console.WriteLine("How much numbers?");
+// int count = Convert.ToInt32(Console.ReadLine()) + 1;
+// for (int i = 1; i < count; i++)
+// {
+//     for (int j = 1; j < count; j++)
+//     {
+//         Console.Write($"{i * j}  ");
+//     }
+//     Console.WriteLine();
+// }
+
+// int[] numbers = { 1, 2, 3, 4, 5 };
+// foreach (int i in numbers)
+// {
+//     Console.WriteLine(i);
+// }
+
+
+// int[][] numbers = new int[4][];
+// numbers[0] = new int[] { 1, 2 };
+// numbers[1] = new int[] { 1, 2, 3 };
+// numbers[2] = new int[] { 1, 2, 3, 4, 5 };
+// numbers[3] = new int[] { 3, 5, 1, 5 };
+// foreach(int[] row in numbers)
+// {
+//     foreach(int number in row)
+//     {
+//         Console.Write($"{number} \t");
+//     }
+//     Print("");
+// }
+ 
+// // // перебор с помощью цикла for
+// // for (int i = 0; i<numbers.Length;i++)
+// // {
+// //     for (int j =0; j<numbers[i].Length; j++)
+// //     {
+// //         Console.Write($"{numbers[i][j]} \t");
+// //     }
+// //     Console.WriteLine();
+// // }
+
+
+
+// Console.WriteLine("\n\n");
+// int[] nums = { 54, 7, -41, 2, 4, 2, 89, 33, -5, 12 };
+// for (int i = 0; i < nums.Length; i++) {Console.Write($"{nums[i]} ");}
+// Console.WriteLine();
+// int temp;
+// for (int i = 0; i < nums.Length - 1; i++)
+// {
+//     for (int j = i + 1; j < nums.Length; j++)
+//     {
+//         if (nums[i] > nums[j])
+//         {
+//             temp = nums[i];
+//             nums[i] = nums[j];
+//             nums[j] = temp;
+//         }
+//     }
+// }
+// Console.WriteLine("Sorted: ");
+// for (int i = 0; i < nums.Length; i++)
+// {
+//     Console.Write($"{nums[i]} ");
+// }
+// Console.WriteLine("\n\n");
