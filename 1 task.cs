@@ -67,72 +67,72 @@ void Wait(int waitTime){System.Threading.Thread.Sleep(waitTime);}
 // else PrintNL(secondDigit);
 
 
-//// Версия с магией
-int randomNumber = Random.Shared.Next(1,99);
-PrintS("Загадываем число.");
-System.Threading.Thread.Sleep(800);
-PrintS(".");
-System.Threading.Thread.Sleep(800);
-Console.Write(".");
-System.Threading.Thread.Sleep(800);
-Console.WriteLine(" ");
-Console.WriteLine($"Наше число: {randomNumber}!");
-int firstRandomDigit = randomNumber / 10;
-int secondRandomDigit = randomNumber % 10;
-System.Threading.Thread.Sleep(2000);
-Console.WriteLine("*** Производим магию вычислений! ***");
-System.Threading.Thread.Sleep(2000);
-Console.WriteLine($"Наша первая цифра: {firstRandomDigit}");
-System.Threading.Thread.Sleep(300);
-Console.WriteLine($"Наша вторая цифра: {secondRandomDigit}");
-Console.Write("Считаем.");
-System.Threading.Thread.Sleep(800);
-Console.Write(".");
-System.Threading.Thread.Sleep(800);
-Console.Write(".");
-Console.WriteLine(" ");
-System.Threading.Thread.Sleep(800);
-if (firstRandomDigit > secondRandomDigit) {Console.WriteLine($"Цифра {firstRandomDigit} больше чем {secondRandomDigit}!");}
-else if (firstRandomDigit < secondRandomDigit) {Console.WriteLine($"Цифра {secondRandomDigit} больше чем {firstRandomDigit}!");}
-else if (firstRandomDigit == secondRandomDigit) {Console.WriteLine($"Вот это повезло {firstRandomDigit} = {secondRandomDigit}");}
-else {Console.WriteLine("Магия не сработала :(");}
+// //// Версия с магией
+// int randomNumber = Random.Shared.Next(1,99);
+// PrintS("Загадываем число.");
+// Wait(800);
+// PrintS(".");
+// Wait(800);
+// PrintS(".");
+// Wait(800);
+// PrintSL(" ");
+// PrintSL($"Наше число: {randomNumber}!");
+// int firstRandomDigit = randomNumber / 10;
+// int secondRandomDigit = randomNumber % 10;
+// Wait(2000);
+// PrintSL("*** Производим магию вычислений! ***");
+// Wait(2000);
+// PrintSL($"Наша первая цифра: {firstRandomDigit}");
+// Wait(300);
+// PrintSL($"Наша вторая цифра: {secondRandomDigit}");
+// PrintSL("Считаем.");
+// Wait(800);
+// PrintS(".");
+// Wait(800);
+// PrintS(".");
+// PrintSL(" ");
+// Wait(800);
+// if (firstRandomDigit > secondRandomDigit) {PrintSL($"Цифра {firstRandomDigit} больше чем {secondRandomDigit}!");}
+// else if (firstRandomDigit < secondRandomDigit) {PrintSL($"Цифра {secondRandomDigit} больше чем {firstRandomDigit}!");}
+// else if (firstRandomDigit == secondRandomDigit) {PrintSL($"Вот это повезло {firstRandomDigit} = {secondRandomDigit}");}
+// else {PrintSL("Магия не сработала :(");}
 
 // //// хе
 // int random = Random.Shared.Next(100,999);
 // int firstDigit = random / 100;
 // int lastDigit = random % 10;
 // int middleDigit = (random / 10) % 10;
-// Console.Write("Загадываем число.");
-// System.Threading.Thread.Sleep(800);
-// Console.Write(".");
-// System.Threading.Thread.Sleep(800);
-// Console.Write(".");
-// System.Threading.Thread.Sleep(800);
-// Console.WriteLine(" ");
-// Console.WriteLine($"Наше число: {random}!");
-// System.Threading.Thread.Sleep(1600);
-// Console.WriteLine(random + " <- Вот наше число");
-// System.Threading.Thread.Sleep(800);
-// Console.WriteLine($"{random} <- А теперь магия исчезновения");
-// System.Threading.Thread.Sleep(1500);
-// Console.WriteLine($"{firstDigit} {lastDigit} <- Хоба!");
-// System.Threading.Thread.Sleep(800);
-// Console.Write(".");
-// System.Threading.Thread.Sleep(300);
-// Console.Write(".");
-// System.Threading.Thread.Sleep(300);
-// Console.Write(".");
-// System.Threading.Thread.Sleep(300);
-// Console.WriteLine(" ");
+// PrintS("Загадываем число.");
+// Wait(800);
+// PrintS(".");
+// Wait(800);
+// PrintS(".");
+// Wait(800);
+// PrintSL(" ");
+// PrintSL($"Наше число: {random}!");
+// Wait(1600);
+// PrintSL($"{random} <- Вот наше число");
+// Wait(800);
+// PrintSL($"{random} <- А теперь магия исчезновения");
+// Wait(1500);
+// PrintSL($"{firstDigit} {lastDigit} <- Хоба!");
+// Wait(800);
+// PrintS(".");
+// Wait(300);
+// PrintS(".");
+// Wait(300);
+// PrintS(".");
+// Wait(300);
+// PrintSL(" ");
 // if (middleDigit == 0) {
-//     Console.WriteLine($"А куда же делся {middleDigit}?");
-//     System.Threading.Thread.Sleep(1200);
-//     Console.WriteLine("Его больше никто так и не видел...");
+//     PrintSL($"А куда же делся {middleDigit}?");
+//     Wait(1200);
+//     PrintSL("Его больше никто так и не видел...");
 //     }
 // else {
-//     Console.WriteLine("А куда же делась цифра {middleDigit}?");
-//     System.Threading.Thread.Sleep(1200);
-//     Console.WriteLine("Её больше никто так и не видел...");
+//     PrintSL("А куда же делась цифра {middleDigit}?");
+//     Wait(1200);
+//     PrintSL("Её больше никто так и не видел...");
 // }
 
 
