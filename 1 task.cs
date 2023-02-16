@@ -57,29 +57,70 @@
 // else Console.WriteLine(secondDigit);
 
 
-int randomNumber = Random.Shared.Next(1,99);
-Console.WriteLine("Загадываем число.");
+// int randomNumber = Random.Shared.Next(1,99);
+// Console.WriteLine("Загадываем число.");
+// System.Threading.Thread.Sleep(800);
+// Console.WriteLine("Загадываем число..");
+// System.Threading.Thread.Sleep(800);
+// Console.WriteLine("Загадываем число...");
+// System.Threading.Thread.Sleep(800);
+// Console.WriteLine("Наше число: " + randomNumber + "!");
+// int firstRandomDigit = randomNumber / 10;
+// int secondRandomDigit = randomNumber % 10;
+// System.Threading.Thread.Sleep(2000);
+// Console.WriteLine("*** Производим магию вычислений! ***");
+// System.Threading.Thread.Sleep(2000);
+// Console.WriteLine("Наша первая цифра: " + firstRandomDigit);
+// System.Threading.Thread.Sleep(300);
+// Console.WriteLine("Наша вторая цифра: " + secondRandomDigit);
+// Console.WriteLine("Считаем.");
+// System.Threading.Thread.Sleep(800);
+// Console.WriteLine("Считаем..");
+// System.Threading.Thread.Sleep(800);
+// Console.WriteLine("Считаем...");
+// System.Threading.Thread.Sleep(800);
+// if (firstRandomDigit > secondRandomDigit) {Console.WriteLine("Цифра " + firstRandomDigit + " больше чем " + secondRandomDigit + "!");}
+// else if (firstRandomDigit < secondRandomDigit) {Console.WriteLine("Цифра " + secondRandomDigit + " больше чем " + firstRandomDigit + "!");}
+// else if (firstRandomDigit == secondRandomDigit) {Console.WriteLine("Вот это повезло!" + firstRandomDigit + "=" + secondRandomDigit);}
+// else {Console.WriteLine("Магия не сработала :(");}
+
+//// Компактная версия + ленивая версия
+int random = Random.Shared.Next(100,999);
+int firstDigit = random / 100;
+int lastDigit = random % 10;
+int middleDigit = (random / 10) % 10;
+// Console.Write(firstDigit);
+// Console.Write(secondDigit);
+Console.Write("Загадываем число.");
 System.Threading.Thread.Sleep(800);
-Console.WriteLine("Загадываем число..");
+Console.Write(".");
 System.Threading.Thread.Sleep(800);
-Console.WriteLine("Загадываем число...");
+Console.Write(".");
 System.Threading.Thread.Sleep(800);
-Console.WriteLine("Наше число: " + randomNumber + "!");
-int firstRandomDigit = randomNumber / 10;
-int secondRandomDigit = randomNumber % 10;
-System.Threading.Thread.Sleep(2000);
-Console.WriteLine("*** Производим магию вычислений! ***");
-System.Threading.Thread.Sleep(2000);
-Console.WriteLine("Наша первая цифра: " + firstRandomDigit);
+Console.WriteLine(" ");
+Console.WriteLine("Наше число: " + random + "!");
+System.Threading.Thread.Sleep(1600);
+Console.WriteLine(random + " <- Вот наше число");
+System.Threading.Thread.Sleep(800);
+Console.WriteLine(random + " <- А теперь магия исчезновения");
+System.Threading.Thread.Sleep(1500);
+Console.Write(firstDigit + " "); Console.WriteLine(lastDigit + " <- Хоба!");
+System.Threading.Thread.Sleep(800);
+Console.Write(".");
 System.Threading.Thread.Sleep(300);
-Console.WriteLine("Наша вторая цифра: " + secondRandomDigit);
-Console.WriteLine("Считаем.");
-System.Threading.Thread.Sleep(800);
-Console.WriteLine("Считаем..");
-System.Threading.Thread.Sleep(800);
-Console.WriteLine("Считаем...");
-System.Threading.Thread.Sleep(800);
-if (firstRandomDigit > secondRandomDigit) {Console.WriteLine("Цифра " + firstRandomDigit + " больше чем " + secondRandomDigit + "!");}
-else if (firstRandomDigit < secondRandomDigit) {Console.WriteLine("Цифра " + secondRandomDigit + " больше чем " + firstRandomDigit + "!");}
-else if (firstRandomDigit == secondRandomDigit) {Console.WriteLine("Вот это повезло!" + firstRandomDigit + "=" + secondRandomDigit);}
-else {Console.WriteLine("Магия не сработала :(");}
+Console.Write(".");
+System.Threading.Thread.Sleep(300);
+Console.Write(".");
+System.Threading.Thread.Sleep(300);
+Console.WriteLine(" ");
+if (middleDigit == 0) {
+    Console.WriteLine("А куда же делся " + middleDigit + "?");
+    System.Threading.Thread.Sleep(1200);
+    Console.WriteLine("Его больше никто так и не видел...");
+    }
+else {
+    Console.WriteLine("А куда же делась цифра " + middleDigit + "?");
+    System.Threading.Thread.Sleep(1200);
+    Console.WriteLine("Её больше никто так и не видел...");
+}
+
