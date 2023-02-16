@@ -1,7 +1,8 @@
-﻿void Print(string message)
-{
-    Console.WriteLine(message);
-}
+﻿void PrintS(string printMessage){Console.Write(printMessage);}
+void PrintN(int printNumber){Console.Write(printNumber);}
+void PrintSL(string printMessage){Console.WriteLine(printMessage);}
+void PrintNL(int printNumber){Console.WriteLine(printNumber);}
+void Wait(int waitTime){System.Threading.Thread.Sleep(waitTime);}
 
 // //1 task
 // Console.Write("Input 1 number: ");
@@ -62,39 +63,39 @@
 // int random = Random.Shared.Next(1,99);
 // int firstDigit = random / 10;
 // int secondDigit = random % 10;
-// if (firstDigit > secondDigit) {Console.WriteLine(firstDigit);}
-// else Console.WriteLine(secondDigit);
+// if (firstDigit > secondDigit) {PrintNL(firstDigit);}
+// else PrintNL(secondDigit);
 
 
-// //// Версия с магией
-// int randomNumber = Random.Shared.Next(1,99);
-// Console.Write("Загадываем число.");
-// System.Threading.Thread.Sleep(800);
-// Console.Write(".");
-// System.Threading.Thread.Sleep(800);
-// Console.Write(".");
-// System.Threading.Thread.Sleep(800);
-// Console.WriteLine(" ");
-// Console.WriteLine($"Наше число: {randomNumber}!");
-// int firstRandomDigit = randomNumber / 10;
-// int secondRandomDigit = randomNumber % 10;
-// System.Threading.Thread.Sleep(2000);
-// Console.WriteLine("*** Производим магию вычислений! ***");
-// System.Threading.Thread.Sleep(2000);
-// Console.WriteLine($"Наша первая цифра: {firstRandomDigit}");
-// System.Threading.Thread.Sleep(300);
-// Console.WriteLine($"Наша вторая цифра: {secondRandomDigit}");
-// Console.Write("Считаем.");
-// System.Threading.Thread.Sleep(800);
-// Console.Write(".");
-// System.Threading.Thread.Sleep(800);
-// Console.Write(".");
-// Console.WriteLine(" ");
-// System.Threading.Thread.Sleep(800);
-// if (firstRandomDigit > secondRandomDigit) {Console.WriteLine($"Цифра {firstRandomDigit} больше чем {secondRandomDigit}!");}
-// else if (firstRandomDigit < secondRandomDigit) {Console.WriteLine($"Цифра {secondRandomDigit} больше чем {firstRandomDigit}!");}
-// else if (firstRandomDigit == secondRandomDigit) {Console.WriteLine($"Вот это повезло {firstRandomDigit} = {secondRandomDigit}");}
-// else {Console.WriteLine("Магия не сработала :(");}
+//// Версия с магией
+int randomNumber = Random.Shared.Next(1,99);
+PrintS("Загадываем число.");
+System.Threading.Thread.Sleep(800);
+PrintS(".");
+System.Threading.Thread.Sleep(800);
+Console.Write(".");
+System.Threading.Thread.Sleep(800);
+Console.WriteLine(" ");
+Console.WriteLine($"Наше число: {randomNumber}!");
+int firstRandomDigit = randomNumber / 10;
+int secondRandomDigit = randomNumber % 10;
+System.Threading.Thread.Sleep(2000);
+Console.WriteLine("*** Производим магию вычислений! ***");
+System.Threading.Thread.Sleep(2000);
+Console.WriteLine($"Наша первая цифра: {firstRandomDigit}");
+System.Threading.Thread.Sleep(300);
+Console.WriteLine($"Наша вторая цифра: {secondRandomDigit}");
+Console.Write("Считаем.");
+System.Threading.Thread.Sleep(800);
+Console.Write(".");
+System.Threading.Thread.Sleep(800);
+Console.Write(".");
+Console.WriteLine(" ");
+System.Threading.Thread.Sleep(800);
+if (firstRandomDigit > secondRandomDigit) {Console.WriteLine($"Цифра {firstRandomDigit} больше чем {secondRandomDigit}!");}
+else if (firstRandomDigit < secondRandomDigit) {Console.WriteLine($"Цифра {secondRandomDigit} больше чем {firstRandomDigit}!");}
+else if (firstRandomDigit == secondRandomDigit) {Console.WriteLine($"Вот это повезло {firstRandomDigit} = {secondRandomDigit}");}
+else {Console.WriteLine("Магия не сработала :(");}
 
 // //// хе
 // int random = Random.Shared.Next(100,999);
