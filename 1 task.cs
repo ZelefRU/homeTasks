@@ -47,3 +47,39 @@
 // // else res = days[numberDay-1];
 // // Console.WriteLine(res);
 
+
+
+// //// Компактная версия
+// int random = Random.Shared.Next(1,99);
+// int firstDigit = random / 10;
+// int secondDigit = random % 10;
+// if (firstDigit > secondDigit) {Console.WriteLine(firstDigit);}
+// else Console.WriteLine(secondDigit);
+
+
+int randomNumber = Random.Shared.Next(1,99);
+Console.WriteLine("Загадываем число.");
+System.Threading.Thread.Sleep(800);
+Console.WriteLine("Загадываем число..");
+System.Threading.Thread.Sleep(800);
+Console.WriteLine("Загадываем число...");
+System.Threading.Thread.Sleep(800);
+Console.WriteLine("Наше число: " + randomNumber + "!");
+int firstRandomDigit = randomNumber / 10;
+int secondRandomDigit = randomNumber % 10;
+System.Threading.Thread.Sleep(2000);
+Console.WriteLine("*** Производим магию вычислений! ***");
+System.Threading.Thread.Sleep(2000);
+Console.WriteLine("Наша первая цифра: " + firstRandomDigit);
+System.Threading.Thread.Sleep(300);
+Console.WriteLine("Наша вторая цифра: " + secondRandomDigit);
+Console.WriteLine("Считаем.");
+System.Threading.Thread.Sleep(800);
+Console.WriteLine("Считаем..");
+System.Threading.Thread.Sleep(800);
+Console.WriteLine("Считаем...");
+System.Threading.Thread.Sleep(800);
+if (firstRandomDigit > secondRandomDigit) {Console.WriteLine("Цифра " + firstRandomDigit + " больше чем " + secondRandomDigit + "!");}
+else if (firstRandomDigit < secondRandomDigit) {Console.WriteLine("Цифра " + secondRandomDigit + " больше чем " + firstRandomDigit + "!");}
+else if (firstRandomDigit == secondRandomDigit) {Console.WriteLine("Вот это повезло!" + firstRandomDigit + "=" + secondRandomDigit);}
+else {Console.WriteLine("Магия не сработала :(");}
