@@ -151,16 +151,29 @@
 // Console.WriteLine(middle);
 
 
-// Задача 13: Напишите программу, которая выводит третью цифру заданного числа или сообщает, что третьей цифры нет. (номер цифры считается от левого края)
-Console.Write(" Input number from 100: ");
-int number = Convert.ToInt32(Console.ReadLine());
-if (number < 100) {Console.WriteLine("Error");}
-else {while (number > 999) {number = number / 10;}
-    Console.WriteLine(number % 10);}
+// // Задача 13: Напишите программу, которая выводит третью цифру заданного числа или сообщает, что третьей цифры нет. (номер цифры считается от левого края)
+// Console.Write(" Input number from 100: ");
+// int number = Convert.ToInt32(Console.ReadLine());
+// if (number < 100) {Console.WriteLine("Error");}
+// else {while (number > 999) {number = number / 10;}
+//     Console.WriteLine(number % 10);}
 
-//Задача 15: Напишите программу, которая принимает на вход цифру, обозначающую день недели, и проверяет, является ли этот день выходным.
+// //Задача 15: Напишите программу, которая принимает на вход цифру, обозначающую день недели, и проверяет, является ли этот день выходным.
 Console.Write(" Input day: ");
 int day = Convert.ToInt32(Console.ReadLine());
-if (day == 6 || day == 7) {Console.WriteLine("Yes");}
-else if (day < 6 ) {Console.WriteLine("Go work!");} 
-else {Console.WriteLine("Error");}
+var result = day == 6 || day == 7 ? ("Stay home") : ("Go Work!");
+if (day > 7) {Console.WriteLine("Error");}
+else {Console.WriteLine(result);}
+
+
+
+// //шифратор
+// int value1 = 3;  // 0b0000_0011
+// int result = 0;
+// // сохраняем в result значения из value1
+// result = result | value1; // 0b0000_0011
+// // сдвигаем разряды в result на 2 разряда влево
+// result = result << 12;   // 0b0000_1100
+// Console.WriteLine(result);  // 12288
+// result = result >> 12;
+// Console.WriteLine(result);  // 3
