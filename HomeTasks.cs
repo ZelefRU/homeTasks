@@ -153,33 +153,36 @@ void Wait(int waitTime) { System.Threading.Thread.Sleep(waitTime); }
 
 // Console.Write(" Input number from 100 to 999: ");
 // int number = Convert.ToInt32(Console.ReadLine());
+// if (number < 1) {number = number * -1;}
+// // number = Math.Abs(number);
 // int middle = (number / 10) % 10;
 // Console.WriteLine(middle);
 
 
 // Задача 13: Напишите программу, которая выводит третью цифру заданного числа или сообщает, что третьей цифры нет. (номер цифры считается от левого края)
-Console.Write("Input number from 100: ");
-int number = Convert.ToInt32(Console.ReadLine());
-if (number < 100)
-{
-    Console.WriteLine("Error");
-}
-else
-
-for (; number > 999;) {
-    number = number / 10;
-}
-
+// Console.Write("Input number from 100: ");
+// int number = Convert.ToInt32(Console.ReadLine());
+// if (number < 100)
 // {
-//     while (number > 999)
-//     {
+//     Console.WriteLine("Error");
+// }
+// else {
+//     for (; number > 999;) {
 //         number = number / 10;
 //     }
 //     Console.WriteLine(number % 10);
 // }
 
+////цикл while
+// {
+//     while (number > 999)
+//     {
+//         number = number / 10;
+//     }
+// }
+
 // //Задача 15: Напишите программу, которая принимает на вход цифру, обозначающую день недели, и проверяет, является ли этот день выходным.
-// Console.Write(" Input day: ");
+// Console.Write("Input day: ");
 // int day = Convert.ToInt32(Console.ReadLine());
 // var result = day == 6 || day == 7 ? ("Stay home") : ("Go Work!");
 // if (day > 7) {Console.WriteLine("Error");}
@@ -381,3 +384,8 @@ for (; number > 999;) {
 //     count++;
 
 // }
+
+
+
+
+
