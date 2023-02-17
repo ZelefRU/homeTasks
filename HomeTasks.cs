@@ -262,3 +262,45 @@ void Wait(int waitTime){System.Threading.Thread.Sleep(waitTime);}
 //     Console.Write($"{nums[i]} ");
 // }
 // Console.WriteLine("\n\n");
+
+
+
+
+// Задача 19
+// Напишите программу, которая принимает на вход пятизначное число и проверяет, является ли оно палиндромом.
+// 14212 -> нет
+// 12821 -> да
+// 23432 -> да
+
+// PrintS(" Input number from 10000 to 99999: ");
+// var arrayNumber = Console.ReadLine().ToArray();
+// if (arrayNumber.Length != 5) {
+//     PrintSL("Error");
+// }
+// else {if (arrayNumber[0] == arrayNumber[4] && arrayNumber[1] == arrayNumber[3]) {
+//         PrintSL("ok");
+//     }
+//     else {PrintSL("Nope");}
+// }
+
+
+// Задача 21
+// Напишите программу, которая принимает на вход координаты двух точек и находит расстояние между ними в 3D пространстве.
+// A (3,6,8); B (2,1,-7), -> 15.84
+// A (7,-5, 0); B (1,-1,9) -> 11.53
+
+// Задача 23
+// Напишите программу, которая принимает на вход число (N) и выдаёт таблицу кубов чисел от 1 до N.
+// 3 -> 1, 8, 27
+// 5 -> 1, 8, 27, 64, 125
+
+PrintS("Input number from 1: ");
+int number = Convert.ToInt32(Console.ReadLine());
+if ( number < 1 ) {
+    PrintSL("Error. Ur num less than 1");
+}
+else {
+    for (int i = 1; i < number + 1; i++) {
+        Console.WriteLine(i * i * i);
+    }
+}
