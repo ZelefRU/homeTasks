@@ -158,20 +158,25 @@ void Wait(int waitTime) { System.Threading.Thread.Sleep(waitTime); }
 
 
 // Задача 13: Напишите программу, которая выводит третью цифру заданного числа или сообщает, что третьей цифры нет. (номер цифры считается от левого края)
-Console.Write(" Input number from 100: ");
+Console.Write("Input number from 100: ");
 int number = Convert.ToInt32(Console.ReadLine());
 if (number < 100)
 {
     Console.WriteLine("Error");
 }
 else
-{
-    while (number > 999)
-    {
-        number = number / 10;
-    }
-    Console.WriteLine(number % 10);
+
+for (; number > 999;) {
+    number = number / 10;
 }
+
+// {
+//     while (number > 999)
+//     {
+//         number = number / 10;
+//     }
+//     Console.WriteLine(number % 10);
+// }
 
 // //Задача 15: Напишите программу, которая принимает на вход цифру, обозначающую день недели, и проверяет, является ли этот день выходным.
 // Console.Write(" Input day: ");
