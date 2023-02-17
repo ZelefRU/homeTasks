@@ -1,8 +1,8 @@
-﻿void PrintS(string printMessage){Console.Write(printMessage);}
-void PrintN(int printNumber){Console.Write(printNumber);}
-void PrintSL(string printMessage){Console.WriteLine(printMessage);}
-void PrintNL(int printNumber){Console.WriteLine(printNumber);}
-void Wait(int waitTime){System.Threading.Thread.Sleep(waitTime);}
+﻿void PrintS(string printMessage) { Console.Write(printMessage); }
+void PrintN(int printNumber) { Console.Write(printNumber); }
+void PrintSL(string printMessage) { Console.WriteLine(printMessage); }
+void PrintNL(int printNumber) { Console.WriteLine(printNumber); }
+void Wait(int waitTime) { System.Threading.Thread.Sleep(waitTime); }
 
 // //1 task
 // Console.Write("Input 1 number: ");
@@ -157,12 +157,21 @@ void Wait(int waitTime){System.Threading.Thread.Sleep(waitTime);}
 // Console.WriteLine(middle);
 
 
-// // Задача 13: Напишите программу, которая выводит третью цифру заданного числа или сообщает, что третьей цифры нет. (номер цифры считается от левого края)
-// Console.Write(" Input number from 100: ");
-// int number = Convert.ToInt32(Console.ReadLine());
-// if (number < 100) {Console.WriteLine("Error");}
-// else {while (number > 999) {number = number / 10;}
-//     Console.WriteLine(number % 10);}
+// Задача 13: Напишите программу, которая выводит третью цифру заданного числа или сообщает, что третьей цифры нет. (номер цифры считается от левого края)
+Console.Write(" Input number from 100: ");
+int number = Convert.ToInt32(Console.ReadLine());
+if (number < 100)
+{
+    Console.WriteLine("Error");
+}
+else
+{
+    while (number > 999)
+    {
+        number = number / 10;
+    }
+    Console.WriteLine(number % 10);
+}
 
 // //Задача 15: Напишите программу, которая принимает на вход цифру, обозначающую день недели, и проверяет, является ли этот день выходным.
 // Console.Write(" Input day: ");
@@ -170,6 +179,9 @@ void Wait(int waitTime){System.Threading.Thread.Sleep(waitTime);}
 // var result = day == 6 || day == 7 ? ("Stay home") : ("Go Work!");
 // if (day > 7) {Console.WriteLine("Error");}
 // else {Console.WriteLine(result);}
+
+
+
 
 
 
@@ -226,7 +238,7 @@ void Wait(int waitTime){System.Threading.Thread.Sleep(waitTime);}
 //     }
 //     Print("");
 // }
- 
+
 // // // перебор с помощью цикла for
 // // for (int i = 0; i<numbers.Length;i++)
 // // {
@@ -266,6 +278,9 @@ void Wait(int waitTime){System.Threading.Thread.Sleep(waitTime);}
 
 
 
+
+
+
 // Задача 19
 // Напишите программу, которая принимает на вход пятизначное число и проверяет, является ли оно палиндромом.
 // 14212 -> нет
@@ -294,13 +309,70 @@ void Wait(int waitTime){System.Threading.Thread.Sleep(waitTime);}
 // 3 -> 1, 8, 27
 // 5 -> 1, 8, 27, 64, 125
 
-PrintS("Input number from 1: ");
-int number = Convert.ToInt32(Console.ReadLine());
-if ( number < 1 ) {
-    PrintSL("Error. Ur num less than 1");
-}
-else {
-    for (int i = 1; i < number + 1; i++) {
-        Console.WriteLine(i * i * i);
-    }
-}
+
+
+
+
+
+
+
+
+
+
+// PrintS("Input number from 1: ");
+// int number = Convert.ToInt32(Console.ReadLine());
+// if ( number < 1 ) {
+//     PrintSL("Error. Ur num less than 1");
+// }
+// else {
+//     for (int i = 1; i < number + 1; i++) {
+//         Console.WriteLine(i * i * i);
+//     }
+// }
+
+
+// Console.Clear (); // Очистка консоли
+// // Console.SetCursorPosition (x, y) - установка курсора в координаты x и y;
+// // Console.WriteLine ("*");
+
+// int xa = 60, ya = 1,
+//     xb = 1, yb = 30,
+//     xc = 120, yc = 30;
+
+// Console.SetCursorPosition (xa, ya);
+// Console.WriteLine ("*");
+
+// Console.SetCursorPosition (xb, yb);
+// Console.WriteLine ("*");
+
+// Console.SetCursorPosition (xc, yc);
+// Console.WriteLine ("*");
+
+// int x = xa, y = ya;
+
+// int count = 0;
+
+// while (count < 25000) {
+
+//     int what = new Random().Next(0, 3); //случайное число от 0 до 2 включительно
+
+//     if (what == 0) {
+//         x = (x + xa) / 2;
+//         y = (y + ya) / 2;
+//     }
+
+//     if (what == 1) {
+//         x = (x + xb) / 2;
+//         y = (y + yb) / 2;
+//     }
+
+//     if (what == 2) {
+//         x = (x + xc) / 2;
+//         y = (y + yc) / 2;
+//     }
+
+//     Console.SetCursorPosition (x, y);
+//     Console.WriteLine("*");
+//     count++;
+
+// }
