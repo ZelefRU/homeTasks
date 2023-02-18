@@ -4,6 +4,7 @@ void PrintSL(string printMessage) { Console.WriteLine(printMessage); }
 void PrintNL(int printNumber) { Console.WriteLine(printNumber); }
 void Wait(int waitTime) { System.Threading.Thread.Sleep(waitTime); }
 
+
 // //1 task
 // Console.Write("Input 1 number: ");
 // int firstNumber = Convert.ToInt32(Console.ReadLine());
@@ -319,10 +320,16 @@ void Wait(int waitTime) { System.Threading.Thread.Sleep(waitTime); }
 
 
 
-
-
-
-
+// PrintS("Input number from 1: ");
+// int number = Convert.ToInt32(Console.ReadLine());
+// if ( number < 1 ) {
+//     PrintSL("Error. Ur num less than 1");
+// }
+// else {
+//     for (int i = 1; i < number + 1; i++) {
+//         Console.WriteLine(i * i * i);
+//     }
+// }
 
 
 
@@ -334,7 +341,7 @@ void Wait(int waitTime) { System.Threading.Thread.Sleep(waitTime); }
 // }
 // else {
 //     for (int i = 1; i < number + 1; i++) {
-//         Console.WriteLine(i * i * i);
+//         Console.WriteLine(Math.Pow(i, 3));
 //     }
 // }
 
@@ -386,6 +393,68 @@ void Wait(int waitTime) { System.Threading.Thread.Sleep(waitTime); }
 // }
 
 
+// //17 задача
+// PrintS("Input x coordinate: ");
+// int xCord = Convert.ToInt32(Console.ReadLine());
+// PrintS("Input y coordinate: ");
+// int yCord = Convert.ToInt32(Console.ReadLine());
+// if (xCord > 0 && yCord > 0) { PrintSL("1"); }
+// else if (xCord < 0 && yCord > 0) { PrintSL("2"); }
+// else if (xCord < 0 && yCord < 0) { PrintSL("3"); }
+// else if (xCord > 0 && yCord < 0) { PrintSL("4"); }
+// else { PrintSL("Error"); } 
+
+// var result = day == 6 || day == 7 ? ("Stay home") : ("Go Work!");
+
+
+////тернар
+// PrintS("Input x coordinate: ");
+// int xCord = Convert.ToInt32(Console.ReadLine());
+// PrintS("Input y coordinate: ");
+// int yCord = Convert.ToInt32(Console.ReadLine());
+// PrintSL(xCord > 0 && yCord > 0 ? "1":
+//         xCord < 0 && yCord > 0 ? "2":
+//         xCord < 0 && yCord < 0 ? "3":
+//         xCord > 0 && yCord > 0 ? "4":
+//         "Error");
 
 
 
+// double a = 4;
+// double b = 2;
+// double c = Math.Pow( a, b );
+// PrintSL($"{c}");
+
+// var a = 1.9;    
+// var aFloor = Math.Floor(a);
+// var aRound = Math.Round(a);
+
+// PrintSL($"{a} - default \n{aFloor} - Floor \n{aRound} - Round");
+
+
+////17 задача
+//AB = √(xb - xa)2 + (yb - ya)2
+
+
+// PrintS("Input a coordinate: ");
+// double xa = Convert.ToDouble(Console.ReadLine());
+// PrintS("Input a coordinate: ");
+// double ya = Convert.ToDouble(Console.ReadLine());
+// PrintS("Input a coordinate: ");
+// double xb = Convert.ToDouble(Console.ReadLine());
+// PrintS("Input a coordinate: ");
+// double yb = Convert.ToDouble(Console.ReadLine());
+
+// double distance = Math.Sqrt(Math.Pow(xb - xa, 2) + Math.Pow(yb - ya, 2));
+// PrintSL($"{distance}");
+
+
+// Задача 18: Напишите программу, которая по заданному номеру четверти, показывает диапазон возможных координат точек в этой четверти (x и y).
+
+PrintS("Input number from 1 to 4: ");
+int number = Convert.ToInt32(Console.ReadLine());
+PrintSL(number == 1 ? "x > 0 && y > 0":
+            number == 2 ? "x > 0 && y < 0":
+            number == 3 ? "x < 0 && y < 0":
+            number == 4 ? "x < 0 && y > 0":
+            "Error");
