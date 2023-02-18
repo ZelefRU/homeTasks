@@ -1,4 +1,5 @@
-﻿void PrintS(string printMessage) { Console.Write(printMessage); }
+﻿void Print(string printMessage) { Console.Write(printMessage); }
+void PrintS(string printMessage) { Console.Write(printMessage); }
 void PrintN(int printNumber) { Console.Write(printNumber); }
 void PrintSL(string printMessage) { Console.WriteLine(printMessage); }
 void PrintNL(int printNumber) { Console.WriteLine(printNumber); }
@@ -431,8 +432,38 @@ void Wait(int waitTime) { System.Threading.Thread.Sleep(waitTime); }
 
 // PrintSL($"{a} - default \n{aFloor} - Floor \n{aRound} - Round");
 
+/////////////////////////////////////////////////////////////////////////////////////////////
+//////                                                                                 //////
+//////                                                                                 //////
+//////                                ДЗ по 3 уроку                                    //////
+//////                                                                                 //////
+//////                                                                                 //////
+/////////////////////////////////////////////////////////////////////////////////////////////
 
-////17 задача
+
+////тернар 17 задача
+// PrintS("Input x coordinate: ");
+// int xCord = Convert.ToInt32(Console.ReadLine());
+// PrintS("Input y coordinate: ");
+// int yCord = Convert.ToInt32(Console.ReadLine());
+// PrintSL(xCord > 0 && yCord > 0 ? "1":
+//         xCord < 0 && yCord > 0 ? "2":
+//         xCord < 0 && yCord < 0 ? "3":
+//         xCord > 0 && yCord > 0 ? "4":
+//         "Error");
+
+// Задача 18: Напишите программу, которая по заданному номеру четверти, показывает диапазон возможных координат точек в этой четверти (x и y).
+
+// PrintS("Input number from 1 to 4: ");
+// int number = Convert.ToInt32(Console.ReadLine());
+// PrintSL(number == 1 ? "x > 0 && y > 0":
+//             number == 2 ? "x > 0 && y < 0":
+//             number == 3 ? "x < 0 && y < 0":
+//             number == 4 ? "x < 0 && y > 0":
+//             "Error");
+
+
+////20 задача
 //AB = √(xb - xa)2 + (yb - ya)2
 
 
@@ -449,12 +480,48 @@ void Wait(int waitTime) { System.Threading.Thread.Sleep(waitTime); }
 // PrintSL($"{distance}");
 
 
-// Задача 18: Напишите программу, которая по заданному номеру четверти, показывает диапазон возможных координат точек в этой четверти (x и y).
+// Задача 22: Напишите программу, которая принимает на вход число (N) и выдаёт таблицу квадратов чисел от 1 до N.
+// Print("Input number from 1: ");
+// int number = Convert.ToInt32(Console.ReadLine());
+// if ( number < 1 ) {Print("Error");}
+// else {
+//     for (int i = 1; i < number +1; i++) {
+//         PrintNL(i * i);
+//     }
+// }
 
-PrintS("Input number from 1 to 4: ");
-int number = Convert.ToInt32(Console.ReadLine());
-PrintSL(number == 1 ? "x > 0 && y > 0":
-            number == 2 ? "x > 0 && y < 0":
-            number == 3 ? "x < 0 && y < 0":
-            number == 4 ? "x < 0 && y > 0":
-            "Error");
+
+
+///Метод Реверса
+int[] ReverseArray(int[] array) {
+    int temp;
+    for (int i = 0; i < array.Length -1; i++) {
+        temp = array[i];
+        array[i] = array[array.Length - i -1];
+        array[array.Length - i -1] = temp;
+    }
+    return array;
+}
+
+int[] testArray = { 1, 2, 3, 4, 5 };
+for (int i = 0; i < testArray.Length; i++) {
+    Print($"{testArray[i]} ");
+}
+
+
+testArray = ReverseArray(testArray);
+for (int i = 0; i < testArray.Length; i++) {
+    Print($"{testArray[i]} ");
+}
+
+// int temp;
+// for (int i = 0; i < testArray.Length /2; i++) {
+//         // Print($"\n = {i}\n");
+//         temp = testArray[i];
+//         testArray[i] = testArray[testArray.Length - i -1];
+//         testArray[testArray.Length - i - 1] = temp;
+//     }
+// Print("\n\n");
+// for (int i = 0; i < testArray.Length; i++) {
+//     Print($"{testArray[i]} ");
+// }
