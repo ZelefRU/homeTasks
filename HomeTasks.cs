@@ -459,9 +459,8 @@ void Wait(int waitTime) { System.Threading.Thread.Sleep(waitTime); }
 
 ///Метод Реверса
 int[] ReverseArray(int[] array) {
-    int temp;
-    for (int i = 0; i < array.Length -1; i++) {
-        temp = array[i];
+    for (int i = 0; i < array.Length / 2; i++) {
+        int temp = array[i];
         array[i] = array[array.Length - i -1];
         array[array.Length - i -1] = temp;
     }
@@ -473,7 +472,7 @@ for (int i = 0; i < testArray.Length; i++) {
     Print($"{testArray[i]} ");
 }
 
-
+Print("\n\n");
 testArray = ReverseArray(testArray);
 for (int i = 0; i < testArray.Length; i++) {
     Print($"{testArray[i]} ");
