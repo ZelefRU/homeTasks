@@ -5,6 +5,24 @@ void PrintSL(string printMessage) { Console.WriteLine(printMessage); }
 void PrintNL(int printNumber) { Console.WriteLine(printNumber); }
 void Wait(int waitTime) { System.Threading.Thread.Sleep(waitTime); }
 
+int ReadNumber (string messageToUser) {
+    Print(messageToUser);
+    return int.Parse(Console.ReadLine());
+}
+
+static int[] IntToArray(int n)
+{
+    if (n == 0) return new int[1] { 0 };
+
+    var digits = new List<int>();
+
+    for (; n != 0; n /= 10)
+        digits.Add(n % 10);
+
+    var array = digits.ToArray();
+    Array.Reverse(array);
+    return array;
+}
 
 // //1 task
 // Console.Write("Input 1 number: ");
@@ -457,26 +475,26 @@ void Wait(int waitTime) { System.Threading.Thread.Sleep(waitTime); }
 
 
 
-///Метод Реверса
-int[] ReverseArray(int[] array) {
-    for (int i = 0; i < array.Length / 2; i++) {
-        int temp = array[i];
-        array[i] = array[array.Length - i -1];
-        array[array.Length - i -1] = temp;
-    }
-    return array;
-}
+// ///Метод Реверса
+// int[] ReverseArray(int[] array) {
+//     for (int i = 0; i < array.Length / 2; i++) {
+//         int temp = array[i];
+//         array[i] = array[array.Length - i -1];
+//         array[array.Length - i -1] = temp;
+//     }
+//     return array;
+// }
 
-int[] testArray = { 1, 2, 3, 4, 5 };
-for (int i = 0; i < testArray.Length; i++) {
-    Print($"{testArray[i]} ");
-}
+// int[] testArray = { 1, 2, 3, 4, 5 };
+// for (int i = 0; i < testArray.Length; i++) {
+//     Print($"{testArray[i]} ");
+// }
 
-Print("\n\n");
-testArray = ReverseArray(testArray);
-for (int i = 0; i < testArray.Length; i++) {
-    Print($"{testArray[i]} ");
-}
+// Print("\n\n");
+// testArray = ReverseArray(testArray);
+// for (int i = 0; i < testArray.Length; i++) {
+//     Print($"{testArray[i]} ");
+// }
 
 // int temp;
 // for (int i = 0; i < testArray.Length /2; i++) {
@@ -532,3 +550,107 @@ for (int i = 0; i < testArray.Length; i++) {
 //         Console.WriteLine(i * i * i);
 //     }
 // }
+
+
+
+
+
+
+
+
+// Задача 26:
+// Напишите программу, которая принимает на вход число и выдаёт количество цифр в числе.
+
+// 456 -> 3
+// 78 -> 2
+// 89126 -> 5
+
+
+// Print("Input number: ");
+// int inputData = Math.Abs(int.Parse(Console.ReadLine()));
+
+// int inputData = Math.Abs(ReadNumber("Input number: ")), count = 1;
+// for (; inputData >= 10; count++) {inputData /= 10;}
+// Print($"Numbers count: {count}");
+
+
+
+
+
+
+
+
+
+//Задача 30: Напишите программу, которая выводит массив из 8
+//элементов, заполненный нулями и единицами в случайном порядке.
+//[1,0,1,1,0,1,0,0]
+
+
+// int[] taskArray = new int[8];
+// for (int i = 0; i < taskArray.Length; i++) {
+//     taskArray[i] = Random.Shared.Next(0,2);
+//     // Print(i == taskArray.Length -1 ? $"{taskArray[i]}":
+//     //     $"{taskArray[i]}, ");
+// }
+// Print($"[ {string.Join(", ", taskArray)} ]");
+
+
+
+// ////Хитрожопость
+// string stringInt = "1, 2, 3, 4";
+// int[] array = stringInt.Split(", ").Select(x => int.Parse(x)).ToArray();
+
+// Print($"[ {string.Join(", ", array)} ]");
+
+
+
+
+// Задача 25: Напишите цикл, который принимает на вход два числа (A и B) и возводит число A в натуральную степень B.
+// 3, 5 -> 243 (3⁵)
+// 2, 4 -> 16
+
+
+// Print("Input A number: ");
+// double numberA = double.Parse(Console.ReadLine());
+// Print("Input B number: ");
+// double numberB = double.Parse(Console.ReadLine());
+// double result = Math.Pow(numberA, numberB);
+// Print($"{result}");
+
+
+
+// Print("Input A number: ");
+// int numberA = int.Parse(Console.ReadLine());
+// Print("Input B number: ");
+// int numberB = int.Parse(Console.ReadLine());
+// int result = 1;
+// for (int i = 1; i < numberB + 1; i++) {
+//     result = numberA * result;
+// }
+// Print($"{result}");
+
+
+// Задача 27: Напишите программу, которая принимает на вход число и выдаёт сумму цифр в числе.
+// 452 -> 11
+// 82 -> 10
+// 9012 -> 12
+
+// Print("Input number: ");
+
+// int userNumber = int.Parse(Console.ReadLine());
+// int[] arr = IntToArray(userNumber);
+// int result = 0;
+// for (int i = 0; i < arr.Length; i++) {
+//     result += arr[i];
+// }
+// Print($"[ {string.Join(", ", arr)} ]");
+// Print($"\n {result}");
+
+// Задача 29: Напишите программу, которая задаёт массив из 8 элементов и выводит их на экран.
+// 1, 2, 5, 7, 19 -> [1, 2, 5, 7, 19]
+// 6, 1, 33 -> [6, 1, 33]
+
+Print("Input numbers like \"1, 2, 3, 4\": ");
+string stringInt = Console.ReadLine();
+int[] array = stringInt.Split(", ").Select(x => int.Parse(x)).ToArray();
+Print($"[ {string.Join(", ", stringInt)} ]");
