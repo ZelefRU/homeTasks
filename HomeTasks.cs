@@ -1,4 +1,5 @@
-﻿void Print(string printMessage) { Console.Write(printMessage); }
+﻿// Assembly 2
+
 void PrintS(string printMessage) { Console.Write(printMessage); }
 void PrintN(int printNumber) { Console.Write(printNumber); }
 void PrintSL(string printMessage) { Console.WriteLine(printMessage); }
@@ -7,14 +8,14 @@ void Wait(int waitTime) { System.Threading.Thread.Sleep(waitTime); }
 
 // Print($"Out array: [{string.Join(", ", randomArray)}]\n");
 void PrintArray (int[] array, string message) {
-    Print($"{message} [{string.Join(", ", array)}]");
+    new M().Print($"{message} [{string.Join(", ", array)}]");
     // return message + string.Join(", ", array);
     // return Print($"{message} [{string.Join(",", array)}]");
 }
 
 
 int ReadNumber (string messageToUser) {
-    Print(messageToUser);
+    new M().Print(messageToUser);
     return int.Parse(Console.ReadLine());
 }
 
@@ -857,7 +858,7 @@ int SumUneven (int[] array) {
 int[] numbersArray = RandomArray(5, 1, 10);
 PrintArray(numbersArray, "Our array: ");
 int sumNumbers = SumUneven(numbersArray);
-Print($"\nOur sum: {sumNumbers}");
+new M().Print($"\nOur sum: {sumNumbers}");
 
 
 // Задача 38: Задайте массив вещественных чисел. Найдите разницу между максимальным и минимальным элементов массива.
