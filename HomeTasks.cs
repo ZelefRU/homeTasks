@@ -5,6 +5,14 @@ void PrintSL(string printMessage) { Console.WriteLine(printMessage); }
 void PrintNL(int printNumber) { Console.WriteLine(printNumber); }
 void Wait(int waitTime) { System.Threading.Thread.Sleep(waitTime); }
 
+// Print($"Out array: [{string.Join(", ", randomArray)}]\n");
+void PrintArray (int[] array, string message) {
+    Print($"{message} [{string.Join(", ", array)}]");
+    // return message + string.Join(", ", array);
+    // return Print($"{message} [{string.Join(",", array)}]");
+}
+
+
 int ReadNumber (string messageToUser) {
     Print(messageToUser);
     return int.Parse(Console.ReadLine());
@@ -23,6 +31,33 @@ static int[] IntToArray(int n)
     Array.Reverse(array);
     return array;
 }
+
+int[] RandomArray (int lenght, int leftRange, int rightRange) {
+    
+    int[] array = new int[lenght];
+    for (int i = 0; i < lenght; i++) {
+        array[i] = Random.Shared.Next(leftRange, rightRange + 1);
+    }
+    return array;
+}
+
+(int, int) SumPlusMinusNum(int[] array) {
+    int sumPlus = 0;
+    int sumMinus = 0;
+
+    for (int i = 0; i < array.Length; i++) {
+        if (array[i] > 0) {
+            sumPlus += array[i];
+        }
+        else if (array[i] < 0) {
+            sumMinus += array[i];
+        
+        }
+        // else Print("\nCatch 0 or error");
+    }
+    return (sumPlus, sumMinus);
+}
+
 
 // //1 task
 // Console.Write("Input 1 number: ");
@@ -404,6 +439,8 @@ static int[] IntToArray(int n)
 // double c = Math.Pow( a, b );
 // PrintSL($"{c}");
 
+
+//Округление
 // var a = 1.9;    
 // var aFloor = Math.Floor(a);
 // var aRound = Math.Round(a);
@@ -650,7 +687,178 @@ static int[] IntToArray(int n)
 // 1, 2, 5, 7, 19 -> [1, 2, 5, 7, 19]
 // 6, 1, 33 -> [6, 1, 33]
 
-Print("Input numbers like \"1, 2, 3, 4\": ");
-string stringInt = Console.ReadLine();
-int[] array = stringInt.Split(", ").Select(x => int.Parse(x)).ToArray();
-Print($"[ {string.Join(", ", stringInt)} ]");
+// Print("Input numbers like \"1, 2, 3, 4\": ");
+// string stringInt = Console.ReadLine();
+// int[] array = stringInt.Split(", ").Select(x => int.Parse(x)).ToArray();
+// Print($"[ {string.Join(", ", stringInt)} ]");
+
+
+// Задача 31: Задайте массив из 12 элементов, 
+// заполненный случайными числами из промежутка [-9, 9]. Найдите сумму отрицательных и положительных элементов массива.
+// Например, в массиве [3,9,-8,1,0,-7,2,-1,8,-3,-1,6] 
+// сумма положительных чисел равна 29, сумма отрицательных равна -20.
+
+
+
+// int[] taskArray = RandomArray(123, -9, 9);
+// (int sumP, int sumM) = SumPlusMinusNum(taskArray);
+// Print($"[{string.Join(", ", taskArray)}]");
+// Print($"\n {sumP}");
+// Print($"\n {sumM}");
+
+
+
+
+// Задача 32: Напишите программу замена элементов массива: положительные элементы замените на соответствующие отрицательные, и наоборот.
+// [-4, -8, 8, 2] -> [4, 8, -8, -2] 
+
+// int[] taskArray = RandomArray(5, -99, 99);
+// Print($"[{string.Join(", ", taskArray)}]");
+// for (int i = 0; i < taskArray.Length; i++) {
+//     taskArray[i] = -taskArray[i];
+// }
+// Print($"[{string.Join(", ", taskArray)}]");
+
+
+
+
+// Задача 33: Задайте массив. Напишите программу, которая определяет, присутствует ли заданное число в массиве.
+// 4; массив [6, 7, 19, 345, 3] -> нет
+// 3; массив [6, 7, 19, 345, 3] -> да
+
+// int[] newArray = RandomArray(20, -9, 9);
+// Print($"[{string.Join(", ", newArray)}]");
+// Print("Input number: ");
+// int userNmber = int.Parse(Console.ReadLine());
+// int count = 0;
+// for (int i = 0; i < newArray.Length; i++) {
+//     if (newArray[i] == userNmber) {
+//         count++;
+//     }
+// }
+// if (count == 0) {
+//     Print("no");
+// }
+// else{
+//     Print($"In this array {count} number");
+// }
+
+
+
+///////CODE WARS ///////////////
+// "1999" --> "20th"
+// "2011" --> "21st"
+// "2154" --> "22nd"
+// "2259" --> "23rd"
+// "1124" --> "12th"
+// "2000" --> "20th"
+// public class Kata
+// {
+//   public static string WhatCentury(string year)
+//   {
+//     double numberCeiling = Math.Ceiling(double.Parse(year) / 100);
+//     string ends = "";
+//     if (numberCeiling % 10 == 1) {
+//         ends = "st";
+//     }
+//     else if (numberCeiling % 10 == 2) {
+//         ends = "nd";
+//     }
+//     else if (numberCeiling % 10 == 3) {
+//         ends = "rd";
+//     }
+//     else {
+//         ends = "th";
+//     }
+//     return $"{numberCeiling}{ends}";
+//   }
+// }
+
+// static string WhatCentury(string year)
+//   {
+//     double numberCeiling = Math.Ceiling(double.Parse(year) / 100);
+//     string end = numberCeiling % 10 == 1 ? "st":
+//         numberCeiling % 10 == 2 ? "nd":
+//         numberCeiling % 10 == 3 ? "rd":
+//         "th";
+//     return $"{numberCeiling}{end}";
+//   }
+
+
+// static string WhatsCentury(string year)
+//   {
+//     double numberCeiling = Math.Ceiling(double.Parse(year) / 100);
+//     string end = numberCeiling % 10 == 1 ? "st":
+//         numberCeiling % 10 == 2 ? "nd":
+//         numberCeiling % 10 == 3 ? "rd":
+//         "th";
+//     return $"{numberCeiling}{end}";
+//   }
+
+// // Print("Input: ");
+// // string myYear = WhatCentury(Console.ReadLine());
+// // Print($"{myYear}");
+
+// Print("Input: ");
+// double inputData = double.Parse(Console.ReadLine());
+// double a = inputData / 100;
+// double aCeiling = Math.Ceiling(a);
+// double one = aCeiling % 10;
+// Console.WriteLine(a);
+// Print($"{aCeiling} \n {one}");
+
+
+//округление
+// var a = 1.1;    
+// var aFloor = Math.Floor(a);
+// var aRound = Math.Round(a);
+// var aCeiling = Math.Ceiling(a);
+
+// PrintSL($"{a} - default \n{aFloor} - Floor \n{aRound} - Round \n{aCeiling} - Ceiling");
+
+
+
+
+// Задача 34: Задайте массив заполненный случайными положительными трёхзначными числами. 
+// Напишите программу, которая покажет количество чётных чисел в массиве.
+// [345, 897, 568, 234] -> 2
+
+
+// int EvenNumber (int[] array) {
+//     int count = 0;
+//     for (int i = 0; i < array.Length; i++) {
+//         if (array[i] % 2 == 0) {
+//             count++;
+//         }
+//         i++;
+//     }
+//     return count;
+// }
+// int[] randomArray = RandomArray(4, 100, 999);
+// int evenCount = EvenNumber(randomArray);
+// Print($"Out array: [{string.Join(", ", randomArray)}]\n");
+// Print($"Even count: {evenCount}");
+
+
+
+
+// Задача 36: Задайте одномерный массив, заполненный случайными числами. Найдите сумму элементов, стоящих на нечётных позициях.
+// [3, 7, 23, 12] -> 19
+// [-4, -6, 89, 6] -> 0
+
+int SumUneven (int[] array) {
+    int sum = 0;
+    for(int i = 1; i < array.Length; i += 2) {
+        sum += array[i];
+    }
+    return sum;
+}
+
+int[] numbersArray = RandomArray(5, 1, 10);
+PrintArray(numbersArray, "Our array: ");
+int sumNumbers = SumUneven(numbersArray);
+Print($"\nOur sum: {sumNumbers}");
+
+
+// Задача 38: Задайте массив вещественных чисел. Найдите разницу между максимальным и минимальным элементов массива.
+// [3 7 22 2 78] -> 76
