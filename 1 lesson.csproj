@@ -8,4 +8,9 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="NewDirectory1" />
+    <Folder Include="task34" />
+  </ItemGroup>
+
 </Project>

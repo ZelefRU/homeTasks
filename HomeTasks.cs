@@ -1,5 +1,4 @@
-﻿// Assembly 2
-
+﻿void Print(string printMessage) { Console.Write(printMessage); }
 void PrintS(string printMessage) { Console.Write(printMessage); }
 void PrintN(int printNumber) { Console.Write(printNumber); }
 void PrintSL(string printMessage) { Console.WriteLine(printMessage); }
@@ -7,8 +6,8 @@ void PrintNL(int printNumber) { Console.WriteLine(printNumber); }
 void Wait(int waitTime) { System.Threading.Thread.Sleep(waitTime); }
 
 // Print($"Out array: [{string.Join(", ", randomArray)}]\n");
-void PrintArray (int[] array, string message) {
-    new M().Print($"{message} [{string.Join(", ", array)}]");
+void PrintArray (int[] array, string message = "\nOur array: ") {
+    Print($"{message} [{string.Join(", ", array)}]");
     // return message + string.Join(", ", array);
     // return Print($"{message} [{string.Join(",", array)}]");
 }
@@ -847,19 +846,57 @@ int[] RandomArray (int lenght, int leftRange, int rightRange) {
 // [3, 7, 23, 12] -> 19
 // [-4, -6, 89, 6] -> 0
 
-int SumUneven (int[] array) {
-    int sum = 0;
-    for(int i = 1; i < array.Length; i += 2) {
-        sum += array[i];
-    }
-    return sum;
-}
-
-int[] numbersArray = RandomArray(5, 1, 10);
-PrintArray(numbersArray, "Our array: ");
-int sumNumbers = SumUneven(numbersArray);
-new M().Print($"\nOur sum: {sumNumbers}");
+// int SumUneven (int[] array) {
+//     int sum = 0;
+//     for(int i = 1; i < array.Length; i += 2) {
+//         sum += array[i];
+//     }
+//     return sum;
+// }
+//
+// int[] numbersArray = RandomArray(5, 1, 10);
+// PrintArray(numbersArray, "Our array: ");
+// int sumNumbers = SumUneven(numbersArray);
+// Print($"\nOur sum: {sumNumbers}");
 
 
 // Задача 38: Задайте массив вещественных чисел. Найдите разницу между максимальным и минимальным элементов массива.
 // [3 7 22 2 78] -> 76
+(int, int, int) DifMaxMin(int[] array) {
+    int max = array[0];
+    int min = array[0];
+    for (int i = 0; i < array.Length; i++)
+    {
+        if (array[i] < min)
+        {
+            min = array[i];
+        }
+        else if (array[i] > max)
+        {
+            max = array[i];
+        }
+    }
+    return (max - min, min, max);
+}
+int DifMaxMinShort(int[] array)
+{
+    int max = array[0];
+    int min = array[0];
+    for (int i = 0; i < array.Length; i++)
+    {
+        if (array[i] < min)
+        {
+            min = array[i];
+        }
+        else if (array[i] > max)
+        {
+            max = array[i];
+        }
+    }
+    return max - min;
+}
+
+int[] taskArray = RandomArray(5, 1 , 99);
+(int dif, int min, int max) = DifMaxMin(taskArray);
+PrintArray(taskArray);
+Print($"\nMax in array {max} - min array {min} = {dif}");
