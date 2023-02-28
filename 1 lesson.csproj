@@ -1,7 +1,6 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <OutputType>Exe</OutputType>
     <TargetFramework>net7.0</TargetFramework>
     <RootNamespace>_1_lesson</RootNamespace>
     <ImplicitUsings>enable</ImplicitUsings>
@@ -9,8 +8,24 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="NewDirectory1" />
+    <Folder Include="CodeWars" />
+    <Folder Include="Features" />
+    <Folder Include="Methods" />
+    <Folder Include="task19" />
+    <Folder Include="task23" />
+    <Folder Include="task25" />
+    <Folder Include="task26" />
+    <Folder Include="task27" />
+    <Folder Include="task29" />
+    <Folder Include="task30" />
+    <Folder Include="task31" />
+    <Folder Include="task32" />
+    <Folder Include="task33" />
     <Folder Include="task34" />
+    <Folder Include="task36" />
+    <Folder Include="task38" />
+    <Folder Include="task42" />
+    <Folder Include="task44" />
   </ItemGroup>
 
 </Project>
