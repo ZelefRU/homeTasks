@@ -1,4 +1,4 @@
-﻿using methods;
+﻿using static methods.Methods;
 
 namespace task33;
 class Program
@@ -8,10 +8,9 @@ class Program
 {
     static void Main(string[] args)
     {
-        Methods m = new Methods();
-        int[] newArray = m.RandomArray(20, -9, 9);
-        m.Print($"[{string.Join(", ", newArray)}]");
-        m.Print("Input number: ");
+        int[] newArray = RandomArray(20, -9, 9);
+        Print($"[{string.Join(", ", newArray)}]");
+        Print("Input number: ");
         int userNmber = int.Parse(Console.ReadLine());
         int count = 0;
         for (int i = 0; i < newArray.Length; i++) {
@@ -20,10 +19,10 @@ class Program
             }
         }
         if (count == 0) {
-            m.Print("no");
+            Print("no");
         }
         else{
-            m.Print($"In this array {count} number");
+            Print($"In this array {count} number");
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿using methods;
+﻿using static methods.Methods;
 
 namespace task25;
 class Program
@@ -8,16 +8,15 @@ class Program
 {
     static void Main(string[] args)
     {
-        Methods m = new Methods();
-        m.Print("Input A number: ");
+        Print("Input A number: ");
         int numberA = int.Parse(Console.ReadLine());
-        m.Print("Input B number: ");
+        Print("Input B number: ");
         int numberB = int.Parse(Console.ReadLine());
         int result = 1;
         for (int i = 1; i < numberB + 1; i++) {
             result = numberA * result;
         }
-        m.Print($"{result}");
+        Print($"{result}");
         
     }
 }

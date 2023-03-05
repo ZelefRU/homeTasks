@@ -1,4 +1,4 @@
-﻿using methods;
+﻿using static methods.Methods;
 
 namespace CodeWars;
 class Program
@@ -31,10 +31,9 @@ class Program
 
     static void Main(string[] args)
     {
-        Methods m = new Methods();
-        m.Print("Input: ");
+        Print("Input: ");
         string myYear = WhatCentury(Console.ReadLine());
-        m.Print($"{myYear}");
+        Print($"{myYear}");
     }
 }
 

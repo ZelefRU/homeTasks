@@ -1,4 +1,4 @@
-﻿using methods;
+﻿using static methods.Methods;
 
 namespace task26;
 class Program
@@ -11,11 +11,9 @@ class Program
 {
     static void Main(string[] args)
     {
-        Methods m = new Methods();
-        
-        int inputData = Math.Abs(m.ReadNumber("Input number: ")), count = 1;
+        int inputData = Math.Abs(ReadNumber("Input number: ")), count = 1;
         for (; inputData >= 10; count++) {inputData /= 10;}
-        m.Print($"Numbers count: {count}");
+        Print($"Numbers count: {count}");
     }
 }
 

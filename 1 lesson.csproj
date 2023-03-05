@@ -8,6 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Folder Include="ArrayTests" />
     <Folder Include="CodeWars" />
     <Folder Include="Features" />
     <Folder Include="Methods" />
@@ -24,8 +25,18 @@
     <Folder Include="task34" />
     <Folder Include="task36" />
     <Folder Include="task38" />
+    <Folder Include="task41" />
     <Folder Include="task42" />
+    <Folder Include="task43" />
     <Folder Include="task44" />
+    <Folder Include="task46" />
+    <Folder Include="task47" />
+    <Folder Include="task48" />
+    <Folder Include="task49" />
+    <Folder Include="task50" />
+    <Folder Include="task51" />
+    <Folder Include="task52" />
+    <Folder Include="xogame1" />
   </ItemGroup>
 
 </Project>

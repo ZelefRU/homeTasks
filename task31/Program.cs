@@ -1,4 +1,4 @@
-﻿using methods;
+﻿using static methods.Methods;
 
 namespace task31;
 class Program
@@ -9,11 +9,9 @@ class Program
 {
     static void Main(string[] args)
     {
-        Methods m = new Methods();
-        
-        int[] taskArray = m.RandomArray(123, -9, 9);
-        (int sumP, int sumM) = m.SumPlusMinusNum(taskArray);
-        m.Print($"[{string.Join(", ", taskArray)}] \n {sumP}\n {sumM}");
+        int[] taskArray = RandomArray(123, -9, 9);
+        (int sumP, int sumM) = SumPlusMinusNum(taskArray);
+        Print($"[{string.Join(", ", taskArray)}] \n {sumP}\n {sumM}");
     }
 }
 

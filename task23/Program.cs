@@ -1,4 +1,4 @@
-﻿using methods;
+﻿using static methods.Methods;
 
 namespace task23;
 class Program
@@ -9,12 +9,10 @@ class Program
 {
     static void Main(string[] args)
     {
-        Methods m = new Methods();
-        
-        m.Print("Input number from 1: ");
+        Print("Input number from 1: ");
         int number = Convert.ToInt32(Console.ReadLine());
         if ( number < 1 ) {
-            m.Print("\nError. Ur num less than 1");
+            Print("\nError. Ur num less than 1");
         }
         else {
             for (int i = 1; i < number + 1; i++) {

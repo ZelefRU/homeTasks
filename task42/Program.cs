@@ -1,4 +1,4 @@
-﻿using methods;
+﻿using static methods.Methods;
 
 namespace task42;
 class Program
@@ -9,8 +9,6 @@ class Program
 {
     static void Main(string[] args)
     {
-        Methods m = new Methods();
-
         String DecToDual(int number)
         {
             string result = "";
@@ -22,6 +20,6 @@ class Program
         }
 
         String test = DecToDual(56);
-        m.Print($"\n\n\n{test}");
+        Print($"\n\n\n{test}");
     }
 }

@@ -1,4 +1,4 @@
-﻿using methods;
+﻿using static methods.Methods;
 
 namespace task27;
 class Program
@@ -9,17 +9,16 @@ class Program
 {
     static void Main(string[] args)
     {
-        Methods m = new Methods();
-        m.Print("Input number: ");
+        Print("Input number: ");
 
         int userNumber = int.Parse(Console.ReadLine());
-        int[] arr = m.IntToArray(userNumber);
+        int[] arr = IntToArray(userNumber);
         int result = 0;
         for (int i = 0; i < arr.Length; i++) {
             result += arr[i];
         }
-        m.Print($"[ {string.Join(", ", arr)} ]");
-        m.Print($"\n {result}");
+        Print($"[ {string.Join(", ", arr)} ]");
+        Print($"\n {result}");
     }
 }
 

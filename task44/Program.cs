@@ -1,4 +1,4 @@
-﻿using methods;
+﻿using static methods.Methods;
 
 namespace task44;
 class Program
@@ -9,8 +9,6 @@ class Program
 {
     static void Main(string[] args)
     {
-        Methods m = new Methods();
-
         int[] FibanachiS(int lenght)
         {
             int[] array = new int[lenght];
@@ -24,6 +22,6 @@ class Program
         }
 
         int[] test = FibanachiS(12);
-        m.PrintArray(test);
+        PrintArray(test);
     }
 }

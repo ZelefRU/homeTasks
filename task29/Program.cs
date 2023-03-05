@@ -1,4 +1,4 @@
-﻿using methods;
+﻿using static methods.Methods;
 
 namespace task29;
 class Program
@@ -8,12 +8,10 @@ class Program
 {
     static void Main(string[] args)
     {
-        Methods m = new Methods();
-        
-        m.Print("Input numbers like \"1, 2, 3, 4\": ");
+        Print("Input numbers like \"1, 2, 3, 4\": ");
         string stringInt = Console.ReadLine();
         int[] array = stringInt.Split(", ").Select(x => int.Parse(x)).ToArray();
-        m.Print($"[ {string.Join(", ", stringInt)} ]");
+        Print($"[ {string.Join(", ", stringInt)} ]");
     }
 }
 

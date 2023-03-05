@@ -1,4 +1,4 @@
-﻿using methods;
+﻿using static methods.Methods;
 
 namespace task32;
 class Program
@@ -7,14 +7,12 @@ class Program
 {
     static void Main(string[] args)
     {
-        Methods m = new Methods();
-        
-        int[] taskArray = m.RandomArray(5, -99, 99);
-        m.Print($"[{string.Join(", ", taskArray)}]");
+        int[] taskArray = RandomArray(5, -99, 99);
+        Print($"[{string.Join(", ", taskArray)}]");
         for (int i = 0; i < taskArray.Length; i++) {
             taskArray[i] = -taskArray[i];
         }
-        m.Print($"[{string.Join(", ", taskArray)}]");
+        Print($"[{string.Join(", ", taskArray)}]");
     }
 }
 
