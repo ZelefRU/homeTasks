@@ -16,7 +16,18 @@ class Program
         int b2 = ReadNumber("Input b2: ");
         int k2 = ReadNumber("Input k2: ");
         
-        Print($"First line: {k1}x + {b1},\nSecond line: {k2}x + {b2}");
+        if((b2-b1)%(k1-k2) == 0)
+        {
+            int x = (b2-b1)/(k1-k2);
+            int y = k1 * x + b1;
+            Print($"b1:{b1} k1:{k1} b2:{b2} k2:{k2} -> {x}:{k1 * x + b1}");
+        } 
+        else 
+        {
+            double x = (double)(b2-b1)/(k1-k2);
+            double y = (double)(k1 * x + b1);
+            Print($"b1:{b1} k1:{k1} b2:{b2} k2:{k2} -> {x}:{y}");
+        }
     }
 }
 

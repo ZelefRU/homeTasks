@@ -6,14 +6,13 @@ class Program
 {
     static void Main(string[] args)
     {
-        // Создаём двумерный массив заполненный нулями
         int[,] gameGround = new int[3, 3];
 
         gameGround = GetFilledMatrix(0, 3, 3);
 
         while (true)
         {
-            
+            int notEmpty = 0;
             Print("-Game ground-\n");
             PrintMatrix(gameGround);
             Print("Input slot 1-9: ");
@@ -21,8 +20,6 @@ class Program
 
             int[] matrixIndexes = new int[2];
             matrixIndexes = GetMatrixIndexes(userData, 3, 3);
-            // PrintArray(matrixIndexes);
-            // Print("\n");
             while (true)
             {
                 if (gameGround[matrixIndexes[0], matrixIndexes[1]] == 0)
@@ -31,11 +28,15 @@ class Program
                     break;
                 }
                 Print("Not empty!\n");
-                Wait(1000);
-                
+                notEmpty = 1;
+                break;
             }
 
             int botTry = 0;
+            if (notEmpty == 1)
+            {
+                continue;
+            }
             while (true)
             {
                 int botNumber = Random.Shared.Next(0, 10);
@@ -47,7 +48,7 @@ class Program
                     gameGround[matrixIndexes[0], matrixIndexes[1]] = 2;
                     break;
                 }
-                if (botTry > 3)
+                if (botTry > 9)
                 {
                     break;
                 }
@@ -55,31 +56,41 @@ class Program
                 Wait(50);
             }
 
-            if (botTry > 3)
+            
+            
+            if (GetDiagonalMatrixSimilarCountLeftRight(1, gameGround) == 3 ||
+                GetDiagonalMatrixSimilarCountRightLeft(1, gameGround) == 3||
+                GetVerticalMatrixSimilarCount(1, 0, gameGround) == 3 ||
+                GetVerticalMatrixSimilarCount(1, 1, gameGround) == 3 ||
+                GetVerticalMatrixSimilarCount(1, 2, gameGround) == 3 ||
+                GetHorizontalMatrixSimilarCount(1, 0, gameGround) == 3 ||
+                GetHorizontalMatrixSimilarCount(1, 1, gameGround) == 3 ||
+                GetHorizontalMatrixSimilarCount(1, 2, gameGround) == 3)
+            {
+                Print("-Game ground-\n");
+                PrintMatrix(gameGround);
+                Print("Player Wins!");
+                break;
+            }
+            if (GetDiagonalMatrixSimilarCountLeftRight(2, gameGround) == 3 ||
+                GetDiagonalMatrixSimilarCountRightLeft(2, gameGround) == 3||
+                GetVerticalMatrixSimilarCount(2, 0, gameGround) == 3 ||
+                GetVerticalMatrixSimilarCount(2, 1, gameGround) == 3 ||
+                GetVerticalMatrixSimilarCount(2, 2, gameGround) == 3 ||
+                GetHorizontalMatrixSimilarCount(2, 0, gameGround) == 3 ||
+                GetHorizontalMatrixSimilarCount(2, 1, gameGround) == 3 ||
+                GetHorizontalMatrixSimilarCount(2, 2, gameGround) == 3)
+            {
+                Print("-Game ground-\n");
+                PrintMatrix(gameGround);
+                Print("Bot Wins!");
+                break;
+            }
+            if (botTry > 9)
             {
                 Print("Game ends!");
                 break;
             }
-
-            int numbersDiagonalLeftRight = GetDiagonalMatrixSimilarCountLeftRight(1, gameGround);
-            int numbersDiagonalRightLeft = GetDiagonalMatrixSimilarCountRightLeft(1, gameGround);
-            int firstLineVertical = GetVerticalMatrixSimilarCount(1, 0, gameGround);
-            int secondLineVertical = GetVerticalMatrixSimilarCount(1, 1, gameGround);
-            int thirdLineVertical = GetVerticalMatrixSimilarCount(1, 2, gameGround);
-            int firstHorizontal = GetHorizontalMatrixSimilarCount(1, 0, gameGround);
-            int secondHorizontal = GetHorizontalMatrixSimilarCount(1, 1, gameGround);
-            int thirdHorizontal = GetHorizontalMatrixSimilarCount(1, 2, gameGround);
-            
-            Print("\n\n--------------" +
-                  $"{numbersDiagonalLeftRight}" + "\n" +
-                  $"{numbersDiagonalRightLeft}" + "\n" +
-                  $"{firstLineVertical}" + "\n" +
-                  $"{secondLineVertical}" + "\n" +
-                  $"{thirdLineVertical}" + "\n" +
-                  $"{firstHorizontal}" + "\n" +
-                  $"{secondHorizontal}" + "\n" +
-                  $"{thirdHorizontal}" + "\n" +
-                  $"------------------\n");
         }
     }
 }
