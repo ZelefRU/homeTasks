@@ -15,6 +15,11 @@ class Program
         int k1 = ReadNumber("Input k1: ");
         int b2 = ReadNumber("Input b2: ");
         int k2 = ReadNumber("Input k2: ");
+
+        if (k1 == k2 || b1 == b2)
+        {
+            Print("Error");
+        }
         
         if((b2-b1)%(k1-k2) == 0)
         {
