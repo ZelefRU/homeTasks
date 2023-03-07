@@ -132,6 +132,7 @@ public static class Methods
             Console.WriteLine();
         }
     }
+    
     public static void PrintMatrix(double[,] matrix)
     {
         for(int i = 0; i < matrix.GetLength(0); i++)
@@ -142,6 +143,41 @@ public static class Methods
             }
         }
         Console.WriteLine();
+    }
+    
+    public static void PrintMatrixXO(int[,] matrix)
+    {
+        for(int i = 0; i < matrix.GetLength(0); i++)
+        {
+            for(int j = 0; j < matrix.GetLength(1); j++)
+            {
+                if (matrix[i, j] == 1)
+                {
+                    Console.BackgroundColor = ConsoleColor.Green;
+                    Console.ForegroundColor = ConsoleColor.White;
+                    Print("X ");
+                    Console.BackgroundColor = ConsoleColor.Gray;
+                    Console.ForegroundColor = ConsoleColor.White;
+                }
+                else if (matrix[i, j] == 2)
+                {
+                    Console.BackgroundColor = ConsoleColor.DarkRed;
+                    Console.ForegroundColor = ConsoleColor.White;
+                    Print("O ");
+                    Console.BackgroundColor = ConsoleColor.Gray;
+                    Console.ForegroundColor = ConsoleColor.White;
+                }
+                else
+                {
+                    Console.BackgroundColor = ConsoleColor.Blue;
+                    Console.ForegroundColor = ConsoleColor.White;
+                    Print("▉ ");
+                    Console.BackgroundColor = ConsoleColor.Gray;
+                    Console.ForegroundColor = ConsoleColor.White;
+                }
+            }
+            Console.WriteLine();
+        }
     }
 
     

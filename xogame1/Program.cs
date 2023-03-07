@@ -14,7 +14,7 @@ class Program
         {
             int notEmpty = 0;
             Print("-Game ground-\n");
-            PrintMatrix(gameGround);
+            PrintMatrixXO(gameGround);
             Print("Input slot 1-9: ");
             int userData = int.Parse(Console.ReadLine());
 
@@ -29,6 +29,35 @@ class Program
                 }
                 Print("Not empty!\n");
                 notEmpty = 1;
+                break;
+            }
+            if (GetDiagonalMatrixSimilarCountLeftRight(1, gameGround) == 3 ||
+                GetDiagonalMatrixSimilarCountRightLeft(1, gameGround) == 3||
+                GetVerticalMatrixSimilarCount(1, 0, gameGround) == 3 ||
+                GetVerticalMatrixSimilarCount(1, 1, gameGround) == 3 ||
+                GetVerticalMatrixSimilarCount(1, 2, gameGround) == 3 ||
+                GetHorizontalMatrixSimilarCount(1, 0, gameGround) == 3 ||
+                GetHorizontalMatrixSimilarCount(1, 1, gameGround) == 3 ||
+                GetHorizontalMatrixSimilarCount(1, 2, gameGround) == 3)
+            {
+                Print("-Game ground-\n");
+                PrintMatrixXO(gameGround);
+                Print("Player Wins!");
+                break;
+            }
+            if (GetDiagonalMatrixSimilarCountLeftRight(2, gameGround) == 3 ||
+                GetDiagonalMatrixSimilarCountRightLeft(2, gameGround) == 3||
+                GetVerticalMatrixSimilarCount(2, 0, gameGround) == 3 ||
+                GetVerticalMatrixSimilarCount(2, 1, gameGround) == 3 ||
+                GetVerticalMatrixSimilarCount(2, 2, gameGround) == 3 ||
+                GetHorizontalMatrixSimilarCount(2, 0, gameGround) == 3 ||
+                GetHorizontalMatrixSimilarCount(2, 1, gameGround) == 3 ||
+                GetHorizontalMatrixSimilarCount(2, 2, gameGround) == 3)
+            {
+                Print("-Game ground-\n");
+                PrintMatrixXO(gameGround);
+                Console.ForegroundColor = ConsoleColor.White;
+                Print("Bot Wins!");
                 break;
             }
 
@@ -55,37 +84,7 @@ class Program
                 botTry++;
                 Wait(50);
             }
-
             
-            
-            if (GetDiagonalMatrixSimilarCountLeftRight(1, gameGround) == 3 ||
-                GetDiagonalMatrixSimilarCountRightLeft(1, gameGround) == 3||
-                GetVerticalMatrixSimilarCount(1, 0, gameGround) == 3 ||
-                GetVerticalMatrixSimilarCount(1, 1, gameGround) == 3 ||
-                GetVerticalMatrixSimilarCount(1, 2, gameGround) == 3 ||
-                GetHorizontalMatrixSimilarCount(1, 0, gameGround) == 3 ||
-                GetHorizontalMatrixSimilarCount(1, 1, gameGround) == 3 ||
-                GetHorizontalMatrixSimilarCount(1, 2, gameGround) == 3)
-            {
-                Print("-Game ground-\n");
-                PrintMatrix(gameGround);
-                Print("Player Wins!");
-                break;
-            }
-            if (GetDiagonalMatrixSimilarCountLeftRight(2, gameGround) == 3 ||
-                GetDiagonalMatrixSimilarCountRightLeft(2, gameGround) == 3||
-                GetVerticalMatrixSimilarCount(2, 0, gameGround) == 3 ||
-                GetVerticalMatrixSimilarCount(2, 1, gameGround) == 3 ||
-                GetVerticalMatrixSimilarCount(2, 2, gameGround) == 3 ||
-                GetHorizontalMatrixSimilarCount(2, 0, gameGround) == 3 ||
-                GetHorizontalMatrixSimilarCount(2, 1, gameGround) == 3 ||
-                GetHorizontalMatrixSimilarCount(2, 2, gameGround) == 3)
-            {
-                Print("-Game ground-\n");
-                PrintMatrix(gameGround);
-                Print("Bot Wins!");
-                break;
-            }
             if (botTry > 9)
             {
                 Print("Game ends!");
