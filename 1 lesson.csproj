@@ -12,6 +12,7 @@
     <Folder Include="CodeWars" />
     <Folder Include="Features" />
     <Folder Include="Methods" />
+    <Folder Include="NewWorkTest" />
     <Folder Include="task19" />
     <Folder Include="task23" />
     <Folder Include="task25" />
@@ -36,6 +37,16 @@
     <Folder Include="task50" />
     <Folder Include="task51" />
     <Folder Include="task52" />
+    <Folder Include="task53" />
+    <Folder Include="task54" />
+    <Folder Include="task55" />
+    <Folder Include="task56" />
+    <Folder Include="task57" />
+    <Folder Include="task58" />
+    <Folder Include="task59" />
+    <Folder Include="task60" />
+    <Folder Include="task61" />
+    <Folder Include="task62" />
     <Folder Include="xogame1" />
   </ItemGroup>
 
