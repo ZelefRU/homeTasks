@@ -51,7 +51,7 @@ public static class Methods
 
     public static int[] IntToArray(int n)
     {
-        if (n == 0) return new int[1] { 0 };
+        if (n == 0) return new[] { 0 };
 
         var digits = new List<int>();
 
@@ -124,11 +124,12 @@ public static class Methods
     
     public static void PrintMatrix(int[,] matrix)
     {
+        Print("\n");
         for(int i = 0; i < matrix.GetLength(0); i++)
         {
             for(int j = 0; j < matrix.GetLength(1); j++)
             {
-                Console.Write(matrix[i, j] + " ");
+                Console.Write(matrix[i, j] + "\t");
             }
             Console.WriteLine();
         }
@@ -136,42 +137,54 @@ public static class Methods
     
     public static void PrintMatrixColor(int[,] matrix)
     {
+        int max = GetMaxMatrixValue(matrix);
+        Print("\n");
         for(int i = 0; i < matrix.GetLength(0); i++)
         {
             for(int j = 0; j < matrix.GetLength(1); j++)
             {
-                if (matrix[i, j] == 10)
+                if (matrix[i, j] > Math.Round((max * 91.05 / 100)))
                 {
-                    Console.BackgroundColor = ConsoleColor.DarkRed;
-                    Console.ForegroundColor = ConsoleColor.White;
-                    Console.Write(matrix[i, j] + " ");
+                    // Console.BackgroundColor = ConsoleColor.DarkRed;
+                    Console.ForegroundColor = ConsoleColor.DarkRed;
+                    Console.Write(matrix[i, j] + "\t");
                 }
-                else if (matrix[i, j] != 10 && matrix[i, j] > 7)
+                else if (matrix[i, j] <= Math.Round((max * 91.05 / 100)) &&
+                        matrix[i, j] > Math.Round((max * 73.55 / 100)))
                 {
-                    Console.BackgroundColor = ConsoleColor.DarkYellow;
-                    Console.ForegroundColor = ConsoleColor.White;
-                    Console.Write(matrix[i, j] + " ");
+                    // Console.BackgroundColor = ConsoleColor.DarkYellow;
+                    Console.ForegroundColor = ConsoleColor.DarkYellow;
+                    Console.Write(matrix[i, j] + "\t");
                 }
-                else if (matrix[i, j] == 0)
+                else if (matrix[i, j] <= Math.Round((max * 73.55 / 100)) &&
+                         matrix[i, j] >= Math.Round((max * 53.05 / 100)))
                 {
-                    Console.BackgroundColor = ConsoleColor.Green;
-                    Console.ForegroundColor = ConsoleColor.White;
-                    Console.Write(matrix[i, j] + " ");
+                    // Console.BackgroundColor = ConsoleColor.Green;
+                    Console.ForegroundColor = ConsoleColor.Green;
+                    Console.Write(matrix[i, j] + "\t");
                 }
-                else if (matrix[i, j] < 7 && matrix[i, j] > 0)
+                else if (matrix[i, j] < Math.Round((max * 53.05 / 100)) &&
+                         matrix[i, j] >= Math.Round((max * 26.65 / 100)))
                 {
-                    Console.BackgroundColor = ConsoleColor.Cyan;
-                    Console.ForegroundColor = ConsoleColor.White;
-                    Console.Write(matrix[i, j] + " ");
+                    // Console.BackgroundColor = ConsoleColor.Cyan;
+                    Console.ForegroundColor = ConsoleColor.Cyan;
+                    Console.Write(matrix[i, j] + "\t");
+                }
+                
+                else if (matrix[i, j] < Math.Round((max * 26.65 / 100)))
+                {
+                    // Console.BackgroundColor = ConsoleColor.Gray;
+                    Console.ForegroundColor = ConsoleColor.Gray;
+                    Console.Write(matrix[i, j] + "\t");
                 }
                 else
                 {
-                    Console.BackgroundColor = ConsoleColor.DarkGray;
-                    Console.BackgroundColor = ConsoleColor.Black;
-                    Console.Write(matrix[i, j] + " ");
+                    // Console.BackgroundColor = ConsoleColor.DarkBlue;
+                    Console.ForegroundColor = ConsoleColor.DarkMagenta;
+                    Console.Write(matrix[i, j] + "\t");
                 }
             }
-            Console.WriteLine();
+            Print("\n");
         }
     }
     
@@ -509,47 +522,51 @@ public static class Methods
         for (int count = 0, row = 0, column = 0; count < rows * columns;)
         {
             //Left-Right
-            Print("\nLeft-Right\n");
+            // Print("\nLeft-Right\n");
             for (; column < tempWidth - temp; column++, count++)
             {
-                Print($"\n--{row} | {column}--\n");
+                // Print($"\n--{row} | {column}--\n");
                 matrix[row, column] = count + 1;
                 PrintMatrix(matrix);
+                Wait(10);
             }
 
             column--;
             row++;
-            Print("\nUp-Down\n");
+            // Print("\nUp-Down\n");
             
             //Up-Down
             for (; row < tempHeight - temp; row++,count++)
             {
-                Print($"\n--{row} | {column}--\n");
+                // Print($"\n--{row} | {column}--\n");
                 matrix[row, column] = count + 1;
                 PrintMatrix(matrix);
+                Wait(10);
             }
 
             row--;
             column--;
-            Print("\nRIGHT-LEFT\n");
+            // Print("\nRIGHT-LEFT\n");
             //Right-Left
             for (; column >= temp; column--,count++)
             {
-                Print($"\n--{row} | {column}--\n");
+                // Print($"\n--{row} | {column}--\n");
                 matrix[row, column] = count + 1;
                 PrintMatrix(matrix);
+                Wait(10);
             }
 
             temp++;
             row--;
             column++;
-            Print("\nDown-Up\n");
+            // Print("\nDown-Up\n");
             //Down-Up
             for (; row > temp; row--, count++)
             {
-                Print($"\n--{row} | {column}--\n");
+                // Print($"\n--{row} | {column}--\n");
                 matrix[row, column] = count + 1;
                 PrintMatrix(matrix);
+                Wait(10);
             }
         }
 

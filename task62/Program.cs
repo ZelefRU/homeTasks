@@ -34,8 +34,10 @@ class Program
 {
     static void Main(string[] args)
     {
-        int[,] spiralMatrix = GetSpiralMatrix(5, 5);
-        PrintMatrix(spiralMatrix);
+        int[,] spiralMatrix = GetSpiralMatrix(25, 25);
+        PrintMatrixColor(spiralMatrix);
         
+
+
     }
 }
