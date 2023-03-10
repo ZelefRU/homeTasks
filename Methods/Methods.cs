@@ -1,4 +1,6 @@
-﻿namespace methods;
+﻿using System.Reflection.Metadata.Ecma335;
+
+namespace methods;
 
 public static class Methods
 {
@@ -408,6 +410,46 @@ public static class Methods
         return array;
     }
 
+    public static int GetSortedNumbers(int number)
+    {
+        String numbers = number.ToString();
+        int[] array = new int[numbers.Length];
+        for (int i = 0; i < numbers.Length; i++)
+        {
+            array[i] = Convert.ToInt32(numbers[i].ToString());
+        }
+        Array.Sort(array);
+        Array.Reverse(array);
+        numbers = "";
+        for (int i = 0; i < array.Length; i++)
+        {
+            numbers += array[i].ToString();
+        }
+        return number = int.Parse(numbers);
+    }
+    
+    public static long FindNextSquare(long num)
+    {
+        long number = 4503599627370497;
+        double asd = Math.Sqrt(number);
+        Print($"{asd}");
+        Print($"\n{Math.Pow(asd, 2)}");
+        
+        return long.Parse((Math.Sqrt(num) % 1 != 0 ? -1: Math.Pow(Math.Sqrt(Convert.ToDouble(number)) + 1, 2)).ToString());
+        if (Math.Sqrt(num) % 1 != 0)
+        {
+            return -1;
+        }
+        else
+        {
+            Print($"{Math.Sqrt(num)}\n");
+            double test = Math.Pow(Math.Sqrt(121) + 1, 2);
+            Print($"\n{Math.Sqrt(121) + 1}");
+            Print($"\n{test}");
+            return -1;
+        }
+    }
+
     public static int[,] GetSortedMatrix(int[,] matrix)
     {
         int[,] newMatrix = new int[matrix.GetLength(0), matrix.GetLength(1)];
@@ -463,10 +505,10 @@ public static class Methods
     public static int[,] GetSumMatrix(int[,] matrix1, int[,] matrix2)
     {
         
-        // if (matrix1.GetLength(0) != matrix2.GetLength(0) || matrix1.GetLength(1) != matrix2.GetLength(1))
-        // {
-        //     return;
-        // }
+        if (matrix1.GetLength(0) != matrix2.GetLength(0) || matrix1.GetLength(1) != matrix2.GetLength(1))
+        {
+            throw new Exception("Matrix not equals.");;
+        }
         int[,] sumMatrix = new int[matrix1.GetLength(0), matrix1.GetLength(1)];
         for (int i = 0; i < matrix1.GetLength(0); i++)
         {
@@ -605,8 +647,52 @@ public static class Methods
             
         }
     }
+    public static int[,] GetRandomUniqueMatrix(int[,] matrix)
+    {
+        int temp;
+        int temp2 = 0;
+        for (int i = 0; i < matrix.GetLength(0); i++)
+        {
+            for (int j = 0; j < matrix.GetLength(1); j++)
+            {
+                bool unique = true;
+                temp = Random.Shared.Next(0, 100);
+                Print($"\nCOUNT - {temp2}");
+                Print($"\nNUMBER - {temp}");
+                while (true)
+                {
+                    for (int k = 0; k < matrix.GetLength(0); k++)
+                    {
+                        for (int l = 0; l < matrix.GetLength(1); l++)
+                        {
+                            if (matrix[k, l] == temp)
+                            {
+                                Print($"\nCOUNT - {temp2}");
+                                Print($"\nNUMBER - {temp}");
+                                temp2++;
+                            }
+                        }
+                    }
+
+                    if (temp2 > 0)
+                    {
+                        temp = Random.Shared.Next(0, 100);
+                    }
+                    else
+                    {
+                        break;
+                    }
+                }
+
+                temp = 0;
+                // PrintMatrix(matrix);
+
+            }
+        }
+        return matrix;
+    }
     
-    public static int[,] GetFilledRandomMatrix(int[,] matrix)
+    public static int[,] GetRandomMatrix(int[,] matrix)
     {
 
         for (int i = 0; i < matrix.GetLength(0); i++)
@@ -619,7 +705,7 @@ public static class Methods
 
         return matrix;
     }
-    public static int[,] GetFilledRandomMatrix(int[,] matrix, int min, int max)
+    public static int[,] GetRandomMatrix(int[,] matrix, int min, int max)
     {
 
         for (int i = 0; i < matrix.GetLength(0); i++)
@@ -633,7 +719,7 @@ public static class Methods
         return matrix;
     }
     
-    public static double[,] GetFilledRandomMatrix(double[,] matrix, int min, int max)
+    public static double[,] GetRandomMatrix(double[,] matrix, int min, int max)
     {
 
         for (int i = 0; i < matrix.GetLength(0); i++)

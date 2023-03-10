@@ -16,7 +16,7 @@ class Program
 
         int[,] array = new int[rows, columns];
         
-        array = GetFilledRandomMatrix(array, -10, 10);
+        array = GetRandomMatrix(array, -10, 10);
         Print("----NORAML----\n");
         PrintMatrix(array);
     }

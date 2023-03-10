@@ -16,7 +16,7 @@ class Program
 
         int[,] array = new int[rows, columns];
 
-        array = GetFilledRandomMatrix(array);
+        array = GetRandomMatrix(array);
         PrintMatrix(array);
     }
 }

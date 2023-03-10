@@ -24,7 +24,7 @@ class Program
 
         int[,] array = new int[rows, columns];
         
-        array = GetFilledRandomMatrix(array, 1, 9);
+        array = GetRandomMatrix(array, 1, 9);
         Print("----NORAML----\n");
         PrintMatrix(array);
 
