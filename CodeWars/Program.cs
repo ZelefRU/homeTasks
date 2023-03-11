@@ -33,8 +33,8 @@ class Program
     static void Main(string[] args)
     {
         int[,] matrix = new int[5, 5];
-        GetRandomUniqueMatrix(matrix);
-        PrintMatrix(matrix);
+        matrix = GetRandomMatrix(10, 10, 0, 999);
+        PrintMatrixColor(matrix);
     }
 }
 

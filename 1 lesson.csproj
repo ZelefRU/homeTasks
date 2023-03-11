@@ -46,6 +46,13 @@
     <Folder Include="task60" />
     <Folder Include="task61" />
     <Folder Include="task62" />
+    <Folder Include="task63" />
+    <Folder Include="task64" />
+    <Folder Include="task65" />
+    <Folder Include="task66" />
+    <Folder Include="task67" />
+    <Folder Include="task68" />
+    <Folder Include="task69" />
     <Folder Include="xogame1" />
   </ItemGroup>
 

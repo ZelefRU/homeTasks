@@ -1,4 +1,6 @@
-﻿using System.Reflection.Metadata.Ecma335;
+﻿using System.Data;
+using System.Reflection.Metadata.Ecma335;
+using System.Runtime.CompilerServices;
 
 namespace methods;
 
@@ -148,7 +150,7 @@ public static class Methods
                 if (matrix[i, j] > Math.Round((max * 91.05 / 100)))
                 {
                     // Console.BackgroundColor = ConsoleColor.DarkRed;
-                    Console.ForegroundColor = ConsoleColor.DarkRed;
+                    Console.ForegroundColor = ConsoleColor.Yellow;
                     Console.Write(matrix[i, j] + "\t");
                 }
                 else if (matrix[i, j] <= Math.Round((max * 91.05 / 100)) &&
@@ -169,14 +171,14 @@ public static class Methods
                          matrix[i, j] >= Math.Round((max * 26.65 / 100)))
                 {
                     // Console.BackgroundColor = ConsoleColor.Cyan;
-                    Console.ForegroundColor = ConsoleColor.Cyan;
+                    Console.ForegroundColor = ConsoleColor.DarkGreen;
                     Console.Write(matrix[i, j] + "\t");
                 }
                 
                 else if (matrix[i, j] < Math.Round((max * 26.65 / 100)))
                 {
                     // Console.BackgroundColor = ConsoleColor.Gray;
-                    Console.ForegroundColor = ConsoleColor.Gray;
+                    Console.ForegroundColor = ConsoleColor.DarkGray;
                     Console.Write(matrix[i, j] + "\t");
                 }
                 else
@@ -200,6 +202,30 @@ public static class Methods
             }
         }
         Console.WriteLine();
+    }
+
+    public static int RecursionSumNumbers(int number)
+    {
+        // 459
+        int sum = number % 10;
+        if (number > 10)
+        {
+            sum += RecursionSumNumbers(number / 10);
+            
+        }
+        return sum;
+
+    }
+    public static int RecursionSqrtNumbers(int first, int second)
+    {
+        int sum = 1;
+        sum *= first;
+        if (second > 1)
+        {
+            sum *= RecursionSqrtNumbers(first, second - 1);
+        }
+
+        return sum;
     }
     
     public static void PrintMatrixXO(int[,] matrix)
@@ -649,26 +675,24 @@ public static class Methods
     }
     public static int[,] GetRandomUniqueMatrix(int[,] matrix)
     {
+        int[,] uniqMatrix = new int[matrix.GetLength(0), matrix.GetLength(1)];
         int temp;
         int temp2 = 0;
         for (int i = 0; i < matrix.GetLength(0); i++)
         {
             for (int j = 0; j < matrix.GetLength(1); j++)
             {
-                bool unique = true;
                 temp = Random.Shared.Next(0, 100);
-                Print($"\nCOUNT - {temp2}");
-                Print($"\nNUMBER - {temp}");
+                PrintMatrix(uniqMatrix);
+                // Print($"\nOur number: {temp}");
                 while (true)
                 {
                     for (int k = 0; k < matrix.GetLength(0); k++)
                     {
                         for (int l = 0; l < matrix.GetLength(1); l++)
                         {
-                            if (matrix[k, l] == temp)
+                            if (uniqMatrix[k, l] == temp)
                             {
-                                Print($"\nCOUNT - {temp2}");
-                                Print($"\nNUMBER - {temp}");
                                 temp2++;
                             }
                         }
@@ -677,6 +701,8 @@ public static class Methods
                     if (temp2 > 0)
                     {
                         temp = Random.Shared.Next(0, 100);
+                        // Print($"\n=-=-= {temp} in {i},{j} =-=-=\n");
+                        temp2 = 0;
                     }
                     else
                     {
@@ -684,12 +710,73 @@ public static class Methods
                     }
                 }
 
-                temp = 0;
-                // PrintMatrix(matrix);
-
+                uniqMatrix[i, j] = temp;
             }
         }
-        return matrix;
+        // Print("\nMATRIX\n");
+        // PrintMatrix(uniqMatrix);
+        return uniqMatrix;
+    }
+
+    public static void RecursionNumberSequence(int number)
+    {
+        if (number > 1)
+        {
+            RecursionNumberSequence(number - 1);
+        }
+        Print($"{number} ");
+    }
+    public static int RecursionNumberSequenceReverse(int number)
+    {
+        int temp = number;
+        Print($"{temp} ");
+        if (number > 1)
+        {
+            
+            temp -= RecursionNumberSequenceReverse(number - 1);
+            temp--;
+        }
+        return temp;
+    }
+
+    public static int RecursionSumSequence(int start, int end)
+    {
+        int sum = start;
+        // Print($"{sum} ");
+        if (start < end)
+        {
+            sum += RecursionSumSequence(start + 1, end);
+            
+        }
+        // Print($"{sum}");
+        return sum;
+
+    }
+    
+    public static int RecursionAckerman(int m, int n)
+    {
+        if (m == 0)
+        {
+            return n + 1;
+        }
+        else if(m > 0 && n == 0)
+        {
+            return RecursionAckerman(m - 1, 1);
+        }
+        else if(m > 0 && n > 0)
+        {
+            return RecursionAckerman(m - 1, RecursionAckerman(m, n - 1));
+        }else
+            return n + 1;
+    }
+    
+    public static void RecursionNumberSequenceFromNumber(int first, int second)
+    {
+        if (second > first)
+        {
+            RecursionNumberSequenceFromNumber(first, second - 1);
+        }
+        Print($"{second} ");
     }
     
     public static int[,] GetRandomMatrix(int[,] matrix)
